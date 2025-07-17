@@ -63,6 +63,12 @@ def main():
             refine_text_checkbox = gr.Checkbox(
                 label="Refine text", value=ex[0][6], interactive=True
             )
+            speed_text = gr.Textbox(
+                label="Audio Speed",
+                placeholder="[speed_5]",
+                value=ex[0][7],
+                interactive=True,
+            )
             temperature_slider = gr.Slider(
                 minimum=0.00001,
                 maximum=1.0,
@@ -143,7 +149,7 @@ def main():
                 minimum=0,
                 maximum=100,
                 step=1,
-                value=4,
+                value=0,
                 label="Split Batch",
                 interactive=True,
             )
@@ -202,6 +208,7 @@ def main():
                 waveform_options=gr.WaveformOptions(
                     sample_rate=24000,
                 ),
+                show_download_button=True,
             )
             generate_button.click(
                 fn=set_buttons_before_generate,
@@ -217,6 +224,7 @@ def main():
                     top_p_slider,
                     top_k_slider,
                     split_batch_slider,
+                    speed_text,
                 ],
                 outputs=text_output,
             ).then(
@@ -232,6 +240,7 @@ def main():
                     sample_text_input,
                     sample_audio_code_input,
                     split_batch_slider,
+                    speed_text,
                 ],
                 outputs=audio_output,
             ).then(
@@ -250,6 +259,7 @@ def main():
                 audio_seed_input,
                 text_seed_input,
                 refine_text_checkbox,
+                speed_text,
             ],
         )
 

@@ -138,6 +138,7 @@ def refine_text(
     top_P,
     top_K,
     split_batch,
+    speed,
 ):
     global chat
 
@@ -154,6 +155,7 @@ def refine_text(
             top_P=top_P,
             top_K=top_K,
             manual_seed=text_seed_input,
+            prompt=speed,
         ),
         split_text=split_batch > 0,
     )
@@ -172,6 +174,7 @@ def generate_audio(
     sample_text_input,
     sample_audio_code_input,
     split_batch,
+    speed,
 ):
     global chat, has_interrupted
 
@@ -184,6 +187,7 @@ def generate_audio(
         top_P=top_P,
         top_K=top_K,
         manual_seed=audio_seed_input,
+        prompt=speed,
     )
 
     if sample_text_input and sample_audio_code_input:

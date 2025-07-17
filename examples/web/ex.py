@@ -6,7 +6,8 @@ ex = [
         20,
         2,
         42,
-        True,
+        False,
+        '[speed_1]',
     ],
     [
         "What is your favorite english food?",
@@ -15,7 +16,8 @@ ex = [
         10,
         245,
         531,
-        True,
+        False,
+        '[speed_0]',
     ],
     [
         "chat T T S is a text to speech model designed for dialogue applications. [uv_break]it supports mixed language input [uv_break]and offers multi speaker capabilities with precise control over prosodic elements like [uv_break]laughter[uv_break][laugh], [uv_break]pauses, [uv_break]and intonation. [uv_break]it delivers natural and expressive speech,[uv_break]so please[uv_break] use the project responsibly at your own risk.[uv_break]",
@@ -25,5 +27,6 @@ ex = [
         70,
         165,
         False,
+        '[speed_9]',
     ],
 ]
